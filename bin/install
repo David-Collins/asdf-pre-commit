@@ -7,8 +7,8 @@ if [[ "${ASDF_INSTALL_TYPE:-version}" == 'ref' ]]; then
   exit 1
 fi
 
-if [ -f "~/.asdf/shims/pip3" ] then
-  export PATH="~/.asdf/shims:$PATH" pip3 install --target="${ASDF_INSTALL_PATH}" pre-commit=="${ASDF_INSTALL_VERSION}"
+if [ -f "$HOME/.asdf/shims/pip3" ]; then
+  PATH="$HOME/.asdf/shims:$PATH" pip3 install --target="${ASDF_INSTALL_PATH}" pre-commit=="${ASDF_INSTALL_VERSION}"
 else
-  PATH="~/.asdf/shims:$PATH" pip install --target="${ASDF_INSTALL_PATH}" pre-commit=="${ASDF_INSTALL_VERSION}"
+  PATH="$HOME/.asdf/shims:$PATH" pip install --target="${ASDF_INSTALL_PATH}" pre-commit=="${ASDF_INSTALL_VERSION}"
 fi
